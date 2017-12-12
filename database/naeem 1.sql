@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2017 at 10:07 AM
--- Server version: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Generation Time: Dec 12, 2017 at 07:00 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `naeem1`
+-- Database: `naeem`
 --
 
 -- --------------------------------------------------------
@@ -35,21 +35,26 @@ CREATE TABLE `basic_info` (
   `diet` varchar(50) NOT NULL,
   `image` varchar(200) DEFAULT NULL,
   `height` varchar(20) DEFAULT NULL,
-  `Skintone` varchar(20) NOT NULL
+  `skintone` varchar(20) NOT NULL,
+  `haircolor` varchar(20) NOT NULL,
+  `eyecolor` varchar(20) NOT NULL,
+  `freckles` int(20) NOT NULL,
+  `dimple` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `basic_info`
 --
 
-INSERT INTO `basic_info` (`email`, `about`, `marital_status`, `diet`, `image`, `height`, `Skintone`) VALUES
-('asmaul@gmail.com', 'Not set', 'Not set', 'Not set', 'groom-default.jpg', '5.6', ''),
-('gulugulu@gmail.com', 'Hei  I am gulu glue. this is my profile. I am a bangladeshi by birth', 'Divorced', 'Vegitarian', 'Not set', '5.7', ''),
-('kibria@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', ''),
-('naeemzannat@gmail.com', 'I am zannat naeem. I m 22 years old. I m a CSE graduate from a reputed university in dhaka.', 'Not married', 'Vegitarian', 'naeem.jpg', '5.8', ''),
-('nasirkhancse@gmail.com', 'elominate that', 'Divorced', 'Vegitarian', 'groom-default.jpg', '5.0', ''),
-('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', ''),
-('yyy@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '');
+INSERT INTO `basic_info` (`email`, `about`, `marital_status`, `diet`, `image`, `height`, `skintone`, `haircolor`, `eyecolor`, `freckles`, `dimple`) VALUES
+('asmaul@gmail.com', 'Not set', 'Not set', 'Not set', 'groom-default.jpg', '5.6', '', '', '', 0, 0),
+('gulugulu@gmail.com', 'Hei  I am gulu glue. this is my profile. I am a bangladeshi by birth', 'Divorced', 'Vegitarian', 'Not set', '5.7', '', '', '', 0, 0),
+('kibria@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '', '', '', 0, 0),
+('naeemzannat@gmail.com', 'I am zannat naeem. I m 22 years old. I m a CSE graduate from a reputed university in dhaka.', 'Not married', 'Vegitarian', 'naeem.jpg', '5.8', '', '', '', 0, 0),
+('nasirkhancse@gmail.com', 'elominate that', 'Divorced', 'Vegitarian', 'groom-default.jpg', '5.0', '', '', '', 0, 0),
+('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '', '', '', 0, 0),
+('yyy@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '', '', '', 0, 0),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 'Not set', 'groom-default.jpg', 'Not set', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -74,7 +79,8 @@ INSERT INTO `contact_info` (`email`, `contact_name`, `contact_number`, `relation
 ('gulugulu@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set'),
 ('naeemzannat@gmail.com', 'Nasir ', '01763433486', 'Friend', '7:20PM'),
 ('nasirkhancse@gmail.com', 'Nayem', '1446574684', 'Friend', '12:50AM'),
-('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set');
+('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set'),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set');
 
 -- --------------------------------------------------------
 
@@ -132,7 +138,8 @@ INSERT INTO `educational_details` (`email`, `undergraduate`, `postgraduate`, `un
 ('gulugulu@gmail.com', 'B.SC in CSE', 'M.Sc in CSE', 'United International university', 'Dhaka Imperial college', 'Student', 'No company', 'Student', '50000.00'),
 ('naeemzannat@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '0.00'),
 ('nasirkhancse@gmail.com', 'Computer Science and Engineering', '', 'United international university', 'Dhaka imperial college', 'Student', 'No Company', 'Student', '0.00'),
-('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '0.00');
+('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '0.00'),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', '0.00');
 
 -- --------------------------------------------------------
 
@@ -161,7 +168,8 @@ INSERT INTO `family_details` (`email`, `father_profession`, `mother_profession`,
 ('gulugulu@gmail.com', 'Employee', 'Homemaker', 3, 5, 'Moderate', 'Not set', 'Middle class', 'Dhanmondi'),
 ('naeemzannat@gmail.com', 'Not set', 'Not set', 0, 0, 'Not set', 'Not set', 'Not set', 'Not set'),
 ('nasirkhancse@gmail.com', 'Professional', 'Home maker', 3, 4, 'Restricted', 'Nuclear', 'Middle Class', 'Comilla'),
-('ppp@gmail.com', 'Not set', 'Not set', 0, 0, 'Not set', 'Not set', 'Not set', 'Not set');
+('ppp@gmail.com', 'Not set', 'Not set', 0, 0, 'Not set', 'Not set', 'Not set', 'Not set'),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 0, 0, 'Not set', 'Not set', 'Not set', 'Not set');
 
 -- --------------------------------------------------------
 
@@ -188,7 +196,8 @@ INSERT INTO `lifestyle` (`email`, `weight`, `habits`, `mother_tongue`, `language
 ('gulugulu@gmail.com', '68 KG', 'Gardening', 'English', 'Bangla, Portugis, France', 'O+', 'I m 100% OK'),
 ('naeemzannat@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set'),
 ('nasirkhancse@gmail.com', '68 KG', 'Gardening', 'Bangla', 'English', 'O+', 'I m 100% OK'),
-('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set');
+('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set'),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set');
 
 -- --------------------------------------------------------
 
@@ -217,7 +226,8 @@ INSERT INTO `partner` (`email`, `min_age`, `max_age`, `min_height`, `max_height`
 ('naeemzannat@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Muslim', 'Not set'),
 ('nasirkhancse@gmail.com', '21', '25', '5.7', '5.6', 'Never married', 'Islam', 'Computer/IT'),
 ('ppp@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set'),
-('yyy@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set');
+('yyy@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set'),
+('zannatnaeem3@gmail.com', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set', 'Not set');
 
 -- --------------------------------------------------------
 
@@ -283,7 +293,8 @@ INSERT INTO `users` (`id`, `creator`, `name`, `email`, `password`, `phone`, `dat
 (11, 'myself', 'Nasir Khan', 'nasirkhancse@gmail.com', '0cc175b9c0f1b6a831c399e269772661', '01763433486', '10/27/1995', 'Male', 'Muslim'),
 (13, 'parent', 'Nazmus sakib', 'nazmus_sakib@gmail.com', '7b8b965ad4bca0e41ab51de7b31363a1', '01763433486', '8/03/1995', 'Male', 'Muslim'),
 (22, 'myself', 'ppppp', 'ppp@gmail.com', '83878c91171338902e0fe0fb97a8c47a', '655646', '10/13/2017', 'Male', 'Muslim'),
-(21, 'parent', 'yyy@gmail.com', 'yyy@gmail.com', '415290769594460e2e485922904f345d', '452453453', '10/25/2017', 'Female', 'Jain');
+(21, 'parent', 'yyy@gmail.com', 'yyy@gmail.com', '415290769594460e2e485922904f345d', '452453453', '10/25/2017', 'Female', 'Jain'),
+(26, 'myself', 'naeem008', 'zannatnaeem3@gmail.com', 'fbade9e36a3f36d3d676c1b808451dd7', '01685726097', '20/10/1993', 'Male', 'Muslim');
 
 --
 -- Indexes for dumped tables
@@ -353,16 +364,19 @@ ALTER TABLE `users`
 --
 ALTER TABLE `contact_us`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `privacy`
 --
 ALTER TABLE `privacy`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
 -- Constraints for dumped tables
 --
