@@ -49,15 +49,33 @@ section.last-section{
 	margin-bottom: 15px;
 	
 }
-span.chng_pr a{
+span.chng_pr a {
     position: relative;
-    left: 178px;
-    top: 170px;
+    width: 92%;
+    text-align: center;
+    top: 93%;
     color: white;
     background: black;
+    
+    opacity: .5;
+    z-index: 500;
+    font-size: large;
 }
 img.profile-picture{
 	position: relative;
+}
+ul.dropdown-menu ul li a {
+    background: white!important;
+    color: black!important;
+}
+.chng_pr{
+	display: none;
+}
+.profile_area:hover .chng_pr{
+	display: block;
+}
+span.chng_pr a:hover {
+    opacity: 0.78;
 }
 </style>
 <div class="page-wrapper">
@@ -69,9 +87,9 @@ img.profile-picture{
 		<h3 id="heading_band"><?php echo $_SESSION['name']; ?><small>(Created by: <?php echo $row['creator']; ?>)</small></h3>
 		<div class="shortinfo">
 			<div class="row">
-				<div class="col-md-4">
-					<img src="images/<?php echo($row['image']); ?>" alt="" height="200" class="pull pull-right" class="profile-picture">
-					<span class="chng_pr"><a href="settings.php">Change profile picture</a></span>
+				<div class="col-md-4 profile_area">
+					<img src="<?php echo($row['image']); ?>" alt="" height="auto" width="100%" class="pull pull-right" class="profile-picture">
+					<span class="chng_pr"><a href="settings.php" style="position: absolute;">Change profile picture</a></span>
 				</div>
 				<div class="col-md-8">
 					<div class="row">
@@ -100,9 +118,6 @@ img.profile-picture{
 								<div class="clearfix"> </div>
 							</div>
 
-							
-
-							
 						</div>
 						<div class="col-md-6">
 							<div class="form_but1">
@@ -135,19 +150,19 @@ img.profile-picture{
 						<div class="col-md-4">
 							<ul>
 								<li><a href="editprofile.php?update=basic">Edit personal profile</a></li>
-								<li><a href="">Edit partner profile</a></li>
+								<li><a href="editprofile.php?update=partner">Edit partner profile</a></li>
 							</ul>
 						</div>
 						<div class="col-md-4">
 							<ul>
-								<li><a href="">Edit contact details</a></li>
-								<li><a href="">Manage family details</a></li>
+								<li><a href="editprofile.php?update=contact">Edit contact details</a></li>
+								<li><a href="editprofile.php?update=family">Manage family details</a></li>
 							</ul>
 						</div>
 
 						<div class="col-md-4">
 							<ul>
-								<li><a href="">Manage educational details</a></li>
+								<li><a href="editprofile.php?update=education">Manage educational details</a></li>
 								<li><a href="">Hide/Delete account</a></li>
 							</ul>
 						</div>
@@ -212,6 +227,30 @@ img.profile-picture{
 					</div>
 					<div class="clearfix"> </div>
 				</div>
+
+				<div class="form_but1">
+					<label class="col-sm-3 control-label1">Skin tone : </label>
+					<div class="col-sm-9 w3_details">
+						<?php echo $row['skintone']; ?>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="form_but1">
+					<label class="col-sm-3 control-label1">Hair color : </label>
+					<div class="col-sm-9 w3_details">
+						<?php echo $row['haircolor']; ?>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="form_but1">
+					<label class="col-sm-3 control-label1">Eye color : </label>
+					<div class="col-sm-9 w3_details">
+						<?php echo $row['eyecolor']; ?>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form_but1">
@@ -258,6 +297,22 @@ img.profile-picture{
 					<label class="col-sm-6 control-label1">Disability : </label>
 					<div class="col-sm-6 w3_details">
 						<?php echo $row['disability']; ?>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="form_but1">
+					<label class="col-sm-6 control-label1">Freckles : </label>
+					<div class="col-sm-6 w3_details">
+						<?php echo $row['freckles']; ?>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="form_but1">
+					<label class="col col-sm-6 col-6 control-label1">Dimples : </label>
+					<div class="col col-sm-6 col-6 w3_details">
+						<?php echo $row['dimple']; ?>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

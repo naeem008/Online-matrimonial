@@ -34,11 +34,21 @@ div.page-wrapper{
 			  <a href="#" class="list-group-item active">
 			    Another updates
 			  </a>
-			  <a href="editprofile.php?update=basic" class="list-group-item">Basic & Lifestyle</a>
-			  <a href="editprofile.php?update=family" class="list-group-item">Family details</a>
-			  <a href="editprofile.php?update=education" class="list-group-item">Education & career</a>
-			  <a href="editprofile.php?update=contact" class="list-group-item">Contact details</a>
-			  <a href="editprofile.php?update=partner" class="list-group-item">Partner preferences</a>
+			  <a href="editprofile.php?update=basic" class="list-group-item"><?php if ($_GET['update']=='basic') {
+			  	echo '<i class="fa fa-hand-o-right" aria-hidden="true"></i>  ';
+			  } ?>Basic & Lifestyle</a>
+			  <a href="editprofile.php?update=family" class="list-group-item"><?php if ($_GET['update']=='family') {
+			  	echo '<i class="fa fa-hand-o-right" aria-hidden="true"></i>  ';
+			  } ?>Family details</a>
+			  <a href="editprofile.php?update=education" class="list-group-item"><?php if ($_GET['update']=='education') {
+			  	echo '<i class="fa fa-hand-o-right" aria-hidden="true"></i>  ';
+			  } ?>Education & career</a>
+			  <a href="editprofile.php?update=contact" class="list-group-item"><?php if ($_GET['update']=='contact') {
+			  	echo '<i class="fa fa-hand-o-right" aria-hidden="true"></i>  ';
+			  } ?>Contact details</a>
+			  <a href="editprofile.php?update=partner" class="list-group-item"><?php if ($_GET['update']=='partner') {
+			  	echo '<i class="fa fa-hand-o-right" aria-hidden="true"></i>  ';
+			  } ?>Partner preferences</a>
 			</div>
 		</div>
 <?php if (isset($_GET['update'])) {
@@ -86,22 +96,52 @@ div.page-wrapper{
 				      <select name="height" id="height" class="form-control">
 				      	<option value="<?php echo $row['height']; ?>"><?php echo substr($row['height'], 0,1); ?>'<?php echo substr($row['height'], 2); ?>"</option>
 				      	<option value="">Select a height</option>
-				      	<option value="4.5">4'5''</option>
-				      	<option value="4.6">4'6''</option>
-				      	<option value="4.7">4'7''</option>
-				      	<option value="4.8">4'8''</option>
-				      	<option value="4.9">4'9''</option>
-				      	<option value="4.10">4'10''</option>
-				      	<option value="4.12">4'12''</option>
-				      	<option value="5.0">5'0''</option>
-				      	<option value="5.1">5'1''</option>
-				      	<option value="5.2">4'2''</option>
-				      	<option value="5.3">5'3''</option>
-				      	<option value="5.4">5'4''</option>
-				      	<option value="5.5">5'5''</option>
-				      	<option value="5.6">5'6''</option>
-				      	<option value="5.7">5'7''</option>
-				      	<option value="5.8">5'8''</option>
+				      	<option value="4.5">4'5''</option><option value="4.6">4'6''</option><option value="4.7">4'7''</option><option value="4.8">4'8''</option><option value="4.9">4'9''</option><option value="4.10">4'10''</option><option value="4.12">4'12''</option><option value="5.0">5'0''</option><option value="5.1">5'1''</option><option value="5.2">4'2''</option><option value="5.3">5'3''</option><option value="5.4">5'4''</option><option value="5.5">5'5''</option><option value="5.6">5'6''</option><option value="5.7">5'7''</option><option value="5.8">5'8''</option>
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="skin-group form-group">
+				    <label for="skin" class="col-sm-2 control-label">Skin<strong>*</strong></label>
+				    <div class="col-sm-10">
+				      <select name="skin" id="skin" class="form-control">
+				      	<option value="<?php echo $row['skintone']; ?>"><?php echo $row['skintone']; ?></option><option value="">Select a skin</option><option value="Fair">Fair</option><option value="Light">Light</option><option value="Medium">Medium</option><option value="Tan">Tan</option><option value="Deep">Deep</option>
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="hair-group form-group">
+				    <label for="hair" class="col-sm-2 control-label">Hair color<strong>*</strong></label>
+				    <div class="col-sm-10">
+				      <select name="hair" id="hair" class="form-control">
+				      	<option value="<?php echo $row['haircolor']; ?>"><?php echo $row['haircolor']; ?></option><option value="">Select a hair color</option><option value="Black">Black</option><option value="Brown">Brown</option><option value="Maroon">Maroon</option><option value="Dark brown">Dark brown</option><option value="Chocolate Brown">Chocolate Brown</option>
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="eye-group form-group">
+				    <label for="eye" class="col-sm-2 control-label">Eye color<strong>*</strong></label>
+				    <div class="col-sm-10">
+				      <select name="eye" id="eye" class="form-control">
+				      	<option value="<?php echo $row['eyecolor']; ?>"><?php echo $row['eyecolor']; ?></option><option value="">Select a eye color</option><option value="Black">Black</option><option value="Brown">Brown</option><option value="Blue">Blue</option>
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="freckle-group form-group">
+				    <label for="freckle" class="col-sm-2 control-label">Freckles<strong>*</strong></label>
+				    <div class="col-sm-10">
+				      <select name="freckle" id="freckle" class="form-control">
+				      	<option value="<?php echo $row['freckles']; ?>"><?php echo $row['freckles']; ?></option><option value="">Select a number of freeckle</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="dimple-group form-group">
+				    <label for="dimple" class="col-sm-2 control-label">Dimples<strong>*</strong></label>
+				    <div class="col-sm-10">
+				      <select name="dimple" id="dimple" class="form-control">
+				      	<option value="<?php echo $row['dimple']; ?>"><?php echo $row['dimple']; ?></option><option value="">Select a number of dimple</option><option value="0">0</option><option value="1">1</option><option value="2">2</option>
 				      </select>
 				    </div>
 				  </div>
